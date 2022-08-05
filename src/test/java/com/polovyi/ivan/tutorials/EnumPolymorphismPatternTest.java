@@ -3,6 +3,7 @@ package com.polovyi.ivan.tutorials;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNull;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class EnumPolymorphismPatternTest {
@@ -23,6 +24,11 @@ public class EnumPolymorphismPatternTest {
         assertEquals(MasterCardType.PLATINUM, CardLogoType.fromCode("504").orElse(null));
         assertEquals(MasterCardType.BLACK, CardLogoType.fromCode("505").orElse(null));
 
+    }
+
+    @Test
+    public void shouldNotReturnCorrectTypeFromCodeGivenInvalidCode() {
+        assertNull(CardLogoType.fromCode("000").orElse(null));
     }
 
     @Test
