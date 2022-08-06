@@ -11,18 +11,37 @@ public class EnumPolymorphismPatternTest {
     @Test
     public void shouldReturnCorrectTypeFromCode() {
         // VISA
-        assertEquals(VisaCardType.INFINITE, CardLogoType.fromCode("401").orElse(null));
-        assertEquals(VisaCardType.SIGNATURE, CardLogoType.fromCode("402").orElse(null));
-        assertEquals(VisaCardType.PLATINUM, CardLogoType.fromCode("403").orElse(null));
-        assertEquals(VisaCardType.GOLD, CardLogoType.fromCode("404").orElse(null));
-        assertEquals(VisaCardType.CLASSIC, CardLogoType.fromCode("405").orElse(null));
+        CardLogoType visaInfinite = CardLogoType.fromCode("401").orElse(null);
+        assertEquals(VisaCardType.INFINITE, visaInfinite);
+
+        CardLogoType visaSignature = CardLogoType.fromCode("402").orElse(null);
+        assertEquals(VisaCardType.SIGNATURE, visaSignature);
+
+        CardLogoType visaPlatinum = CardLogoType.fromCode("403").orElse(null);
+        assertEquals(VisaCardType.PLATINUM, visaPlatinum);
+
+        CardLogoType visaGold = CardLogoType.fromCode("404").orElse(null);
+        assertEquals(VisaCardType.GOLD, visaGold);
+
+        CardLogoType visaClassic = CardLogoType.fromCode("405").orElse(null);
+        assertEquals(VisaCardType.CLASSIC, visaClassic);
 
         // MASTERCARD
-        assertEquals(MasterCardType.STANDARD, CardLogoType.fromCode("501").orElse(null));
-        assertEquals(MasterCardType.WORLD, CardLogoType.fromCode("502").orElse(null));
-        assertEquals(MasterCardType.GOLD, CardLogoType.fromCode("503").orElse(null));
-        assertEquals(MasterCardType.PLATINUM, CardLogoType.fromCode("504").orElse(null));
-        assertEquals(MasterCardType.BLACK, CardLogoType.fromCode("505").orElse(null));
+
+        CardLogoType mastercardStandard = CardLogoType.fromCode("501").orElse(null);
+        assertEquals(MasterCardType.STANDARD, mastercardStandard);
+
+        CardLogoType mastercardWorld = CardLogoType.fromCode("502").orElse(null);
+        assertEquals(MasterCardType.WORLD, mastercardWorld);
+
+        CardLogoType mastercardGold = CardLogoType.fromCode("503").orElse(null);
+        assertEquals(MasterCardType.GOLD, mastercardGold);
+
+        CardLogoType mastercardPlatinum = CardLogoType.fromCode("504").orElse(null);
+        assertEquals(MasterCardType.PLATINUM, mastercardPlatinum);
+
+        CardLogoType mastercardBlack = CardLogoType.fromCode("505").orElse(null);
+        assertEquals(MasterCardType.BLACK, mastercardBlack);
 
     }
 
